@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini WordPress</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+    <!-- Include JS file. -->
+    <script type='text/javascript'
+        src='https://cdn.jsdelivr.net/npm/froala-editor@2.9.3/js/froala_editor.min.js'></script>
+
+    <!-- Include Editor style. -->
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.3/css/froala_editor.min.css' rel='stylesheet'
+        type='text/css' />
+    <link href='https://cdn.jsdelivr.net/npm/froala-editor@2.9.3/css/froala_style.min.css' rel='stylesheet'
+        type='text/css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container col-sm-12">
+        <div class="row">
+            <div class="col-sm-2" id="navbar-left">
+            </div>
+            <div class="d-flex justify-content-end col-sm-10" id="navbar-right">
+                <span>
+                    <i class="far fa-user fa-lg"></i> Felix Goh
+                </span>    
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-sm-12">
+        <div class="row">
+            <div class="col-sm-2" id="main-left">
+                <center>
+                    <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="WordPress Logo"
+                        height="200px" width="200px" class="logo" /><br>
+                </center>
+                <br><br><br>
+                <a href="#" onclick="showForm()">add article</a><br><br>
+                <a href="#" onclick="showMyArticle()">my articles</a><br><br>
+                <a href="#" onclick="showAllArticle()">show all articles</a>
+
+            </div>
+            <div class="offset-2 col-sm-10" id="main-right">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-sm-12 footer">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-10">
+                <h6 style="text-align:center">2019 &copy;<b>MINIWP</b></h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

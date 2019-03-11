@@ -1,0 +1,57 @@
+#navbar-left {
+    background-color: #fff;
+    padding: 20px;
+    color: black;
+}
+
+#navbar-right {
+    background-color: #000;
+    padding: 20px;
+    color: white;
+}
+
+#main-left {
+    min-height: 1000px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+}
+
+#main-left a {
+    padding-left: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+#main-left a:hover {
+    color: orange;
+    font-weight: bold;
+}
+
+#main-right {
+    padding-top: 50px;
+    min-height: 1000px;
+    background-color: orange;
+}
+
+#article-card {
+    background-color: #f7f5df;
+}
+
+#preview {
+    padding: 20px;
+    background-color: #f7f5df;
+   
+}
+
+.footer {
+    background-color: grey;
+    padding: 15px;
+}
+
+.logo {
+    margin-top: -80px;
+}
