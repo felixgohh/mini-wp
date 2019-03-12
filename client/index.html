@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini WordPress</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css"
+        type="text/css" media="screen" charset="utf-8">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container col-sm-12 navbar-main">
+        <div class="row">
+            <div class="col-sm-2" id="navbar-left">
+            </div>
+            <div class="d-flex justify-content-end col-sm-10" id="navbar-right">
+                <span>
+                    <i class="far fa-user fa-lg"></i> Felix Goh
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-sm-12" id="main-content">
+        <div class="row">
+            <div class="col-sm-2" id="main-left">
+                <center>
+                    <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="WordPress Logo"
+                        height="200px" width="200px" class="logo" /><br>
+                </center>
+                <br><br><br>
+                <a href="#" @click="showForm()">add article</a><br><br>
+                <a href="#">my articles</a><br><br>
+                <a href="#" @click="showArticles()">show all articles</a>
+            </div>
+
+            <div class="offset-2 col-sm-10" id="main-right">
+
+                <!-- article-form -->
+                <div class="article-form" v-if="seenForm">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="Article Title">Title</label>
+                            <input type="text" class="form-control" placeholder="Your Title" style="font-weight:bold"
+                                v-model="articleTitle">
+                        </div>
+                    </div>
+                    <br>
+                    <label>Content</label>
+                    <textarea class="form-control" rows="10" v-model="articleContent"></textarea>
+                    <br>
+                    <button class="btn btn-danger" @click="submitArticle()">SUBMIT</button>
+                </div>
+                <!-- article-form -->
+                
+                <!-- update-form -->
+                <div class="article-form" v-if="seenUpdateForm">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="Article Title">Title</label>
+                            <input type="text" class="form-control" placeholder="Your Title" style="font-weight:bold"
+                                v-model="articleTitleUpdate">
+                        </div>
+                    </div>
+                    <br>
+                    <label>Content</label>
+                    <textarea class="form-control" rows="10"
+                        v-model="articleContentUpdate"></textarea>
+                    <br>
+                    <button class="btn btn-danger" @click="updateArticle()">SUBMIT</button>
+                </div>
+                <!-- update-form -->
+
+                <!-- all-articles -->
+                <div class="container col-sm-12" v-for="article in articleList" v-if="seenArticle">
+                    <div class="card" id="article-card" style="width: 68rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{article.title}}
+                            </h5>
+                            <p class="card-text">
+                                {{article.content}}
+                            </p>
+                            <p class="card-text" id="createdAt">
+                                {{article.created_at.slice(0,10)}}
+                            </p>
+                            <button class="card-link btn btn-danger" @click="showUpdateForm(article._id)">Update Article</button>
+                            <button class="card-link btn btn-danger" @click="deleteArticle(article._id)">Delete Article</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div><br>
+            <!-- all-articles -->
+
+
+        </div>
+
+    </div>
+
+    <div class="container col-sm-12 footer">
+        <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-10">
+                <h6 style="text-align:center">2019 &copy;<b>MINIWP</b></h6>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
