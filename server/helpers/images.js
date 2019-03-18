@@ -5,6 +5,15 @@ const { Storage } = require('@google-cloud/storage')
 
 const CLOUD_BUCKET = process.env.CLOUD_BUCKET
 
+const Multer = require('multer'),
+    multer = Multer({
+        storage: Multer.MemoryStorage,
+        limits: {
+            fileSize: 5 * 1024 * 1024
+        }
+        // dest: '../images'
+    })
+
 const storage = new Storage({
     projectId: process.env.GCLOUD_PROJECT,
     keyFilename: process.env.KEYFILE_PATH
@@ -45,14 +54,6 @@ const sendUploadToGCS = (req, res, next) => {
     stream.end(req.file.buffer)
 }
 
-const Multer = require('multer'),
-    multer = Multer({
-        storage: Multer.MemoryStorage,
-        limits: {
-            fileSize: 5 * 1024 * 1024
-        }
-        // dest: '../images'
-    })
 
 module.exports = {
     getPublicUrl,

@@ -37,6 +37,8 @@ class Controller {
     }
 
     static create(req, res) {
+        console.log(req.body,'<<<<<<<<<<<<');
+        
         let objCreate = {
             link: req.file.cloudStoragePublicUrl,
             title: req.body.title,

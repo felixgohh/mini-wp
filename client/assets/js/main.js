@@ -1,7 +1,5 @@
 const baseURL = `http://localhost:3001`
 
-// MY ARTICLE FEATURE IS NOT USEABLE
-
 const app = new Vue({
     el: "#app",
     data: {
